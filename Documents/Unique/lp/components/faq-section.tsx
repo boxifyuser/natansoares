@@ -45,6 +45,30 @@ const allFAQs: FAQItem[] = [
   {
     question: 'Existe carência para utilizar os serviços?',
     answer: 'Não. Imediatamente após a aprovação da vistoria e ativação do seu plano em nosso sistema, todos os serviços contratados estarão disponíveis, incluindo assistência 24h e cobertura para sinistros. Sua proteção entra em vigor assim que o processo é concluído – sem espera e sem surpresas.'
+  },
+  {
+    question: 'Como funciona a proteção?',
+    answer: 'A proteção veicular da UNIQUE funciona através de um sistema cooperativo onde os associados compartilham os custos de forma solidária. Você paga uma mensalidade acessível e, em caso de sinistro (roubo, furto, colisão, etc.), a cooperativa cobre os custos através do fundo comum. É um modelo transparente, sem burocracia e com economia de até 50% em relação aos seguros tradicionais.'
+  },
+  {
+    question: 'Em quanto tempo sou atendido?',
+    answer: 'Nosso atendimento é imediato. Após o envio do formulário, um consultor entra em contato via WhatsApp em até 2 minutos. Para acionamentos de assistência, nossa central 24h atende imediatamente e despacha o serviço necessário (guincho, chaveiro, pane seca, etc.) em tempo recorde, com cobertura em todo território nacional.'
+  },
+  {
+    question: 'Quais documentos preciso para contratar?',
+    answer: 'O processo é simples e descomplicado. Você precisará de: documento de identidade (RG ou CNH), CPF, comprovante de residência, documento do veículo (CRLV) e comprovante de pagamento da primeira mensalidade. Não exigimos análise de perfil, consulta ao SERASA/SPC ou indicação de condutor principal. Tudo pode ser enviado digitalmente.'
+  },
+  {
+    question: 'Atende em todo Brasil?',
+    answer: 'Sim! A UNIQUE oferece cobertura e assistência 24h em todo território brasileiro. Nossa rede de oficinas parceiras e serviços de assistência estão disponíveis em todas as regiões do país, garantindo que você tenha suporte onde quer que esteja. Seja em uma estrada no interior ou em uma grande capital, nossa assistência chega até você.'
+  },
+  {
+    question: 'Como pago a mensalidade?',
+    answer: 'Oferecemos diversas formas de pagamento para sua comodidade: boleto bancário, cartão de crédito (parcelamento em até 12x), débito automático e PIX. O pagamento é mensal e você pode escolher a melhor forma que se adapta à sua situação. Não há cobranças extras ou taxas ocultas – apenas o valor da mensalidade acordada na contratação.'
+  },
+  {
+    question: 'Como acionar a assistência?',
+    answer: 'É muito simples! Em caso de necessidade, você pode acionar a assistência 24h através do nosso telefone 0800 777 6677 ou via WhatsApp. Nossa central recebe sua solicitação imediatamente e despacha o serviço necessário (guincho, chaveiro, pane seca, troca de pneu, etc.) para sua localização. Todo o processo é digital e ágil, sem complicação.'
   }
 ]
 
