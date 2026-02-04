@@ -317,17 +317,15 @@ export default function Home() {
         >
           {conteudosDestaque.map((conteudo, index) => (
             <motion.div key={index} variants={itemVariants}>
-              <Link href={conteudo.href}>
-                <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer">
-                  <CardHeader>
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-xs font-semibold text-primary">{conteudo.category}</span>
-                    </div>
-                    <CardTitle className="text-xl">{conteudo.title}</CardTitle>
-                    <CardDescription>{conteudo.description}</CardDescription>
-                  </CardHeader>
-                </Card>
-              </Link>
+              <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer group" onClick={() => window.location.href = conteudo.href}>
+                <CardHeader>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs font-semibold text-primary">{conteudo.category}</span>
+                  </div>
+                  <CardTitle className="text-xl group-hover:text-primary transition-colors">{conteudo.title}</CardTitle>
+                  <CardDescription>{conteudo.description}</CardDescription>
+                </CardHeader>
+              </Card>
             </motion.div>
           ))}
         </motion.div>
