@@ -317,8 +317,8 @@ export default function Home() {
         >
           {conteudosDestaque.map((conteudo, index) => (
             <motion.div key={index} variants={itemVariants}>
-              <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer" asChild>
-                <Link href={conteudo.href}>
+              <Link href={conteudo.href}>
+                <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer">
                   <CardHeader>
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-xs font-semibold text-primary">{conteudo.category}</span>
@@ -326,8 +326,8 @@ export default function Home() {
                     <CardTitle className="text-xl">{conteudo.title}</CardTitle>
                     <CardDescription>{conteudo.description}</CardDescription>
                   </CardHeader>
-                </Link>
-              </Card>
+                </Card>
+              </Link>
             </motion.div>
           ))}
         </motion.div>

@@ -1,5 +1,9 @@
-# https://www.robotstxt.org/robotstxt.html
+# *
 User-agent: *
 Allow: /
 
+# Host
+Host: https://www.natansoares.com.br
+
+# Sitemaps
 Sitemap: https://www.natansoares.com.br/sitemap.xml

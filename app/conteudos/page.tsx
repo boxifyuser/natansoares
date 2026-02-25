@@ -107,8 +107,8 @@ export default function ConteudosPage() {
         {/* Lista de Conteúdos */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {conteudos.map((conteudo) => (
-            <Card key={conteudo.slug} className="h-full hover:shadow-lg transition-shadow cursor-pointer" asChild>
-              <Link href={`/conteudos/${conteudo.slug}`}>
+            <Link key={conteudo.slug} href={`/conteudos/${conteudo.slug}`}>
+              <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs font-semibold text-primary">{conteudo.category}</span>
@@ -130,8 +130,8 @@ export default function ConteudosPage() {
                     </div>
                   </div>
                 </CardContent>
-              </Link>
-            </Card>
+              </Card>
+            </Link>
           ))}
         </div>
 
