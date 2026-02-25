@@ -1,83 +1,103 @@
 import Link from "next/link";
-import { Mail, MessageCircle } from "lucide-react";
+import { site } from "@/content/site";
+import { Linkedin, Instagram, Youtube } from "lucide-react";
+
+const footerLinks = [
+  { href: "/", label: "Início" },
+  { href: "/comunidade", label: "Comunidade" },
+  { href: "/mentoria", label: "Mentoria" },
+  { href: "/boxify", label: "Boxify" },
+  { href: "/granjatexas", label: "Granja Texas" },
+  { href: "/contato", label: "Contato" },
+];
 
 export function Footer() {
-  const whatsappLink = "https://wa.me/5511999999999?text=Olá! Gostaria de saber mais sobre suas aulas e mentorias.";
-  const email = "contato@natansoares.com.br";
-
   return (
     <footer className="border-t bg-muted/50">
       <div className="container py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Natan Soares</h3>
-            <p className="text-sm text-muted-foreground">
-              Professor de tecnologia com foco em Inteligência Artificial.
+            <h3 className="text-lg font-semibold">{site.name}</h3>
+            <p className="text-sm text-muted-foreground max-w-xs">
+              CRM, Tecnologia e IA para crescer com processo. Comunidade
+              gratuita e mentoria.
             </p>
           </div>
 
           <div className="space-y-4">
             <h4 className="text-sm font-semibold">Navegação</h4>
             <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/" className="text-muted-foreground hover:text-primary">
-                  Início
-                </Link>
-              </li>
-              <li>
-                <Link href="/sobre" className="text-muted-foreground hover:text-primary">
-                  Sobre
-                </Link>
-              </li>
-              <li>
-                <Link href="/aulas" className="text-muted-foreground hover:text-primary">
-                  Aulas & Mentorias
-                </Link>
-              </li>
-              <li>
-                <Link href="/conteudos" className="text-muted-foreground hover:text-primary">
-                  Conteúdos
-                </Link>
-              </li>
-              <li>
-                <Link href="/palestras" className="text-muted-foreground hover:text-primary">
-                  Palestras
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="space-y-4">
-            <h4 className="text-sm font-semibold">Serviços</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Aulas Particulares</li>
-              <li>Mentorias</li>
-              <li>Consultorias</li>
-              <li>Palestras</li>
+              {footerLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div className="space-y-4">
             <h4 className="text-sm font-semibold">Contato</h4>
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-2 text-sm">
               <li>
                 <a
-                  href={whatsappLink}
+                  href={`https://wa.me/${site.whatsapp}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-muted-foreground hover:text-primary"
+                  className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <MessageCircle className="h-4 w-4" />
                   WhatsApp
                 </a>
               </li>
               <li>
                 <a
-                  href={`mailto:${email}`}
-                  className="flex items-center gap-2 text-muted-foreground hover:text-primary"
+                  href={`mailto:${site.email}`}
+                  className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <Mail className="h-4 w-4" />
-                  {email}
+                  {site.email}
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="space-y-4">
+            <h4 className="text-sm font-semibold">Redes</h4>
+            <ul className="flex gap-4">
+              <li>
+                <a
+                  href={site.footer.redes.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href={site.footer.redes.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Instagram className="h-5 w-5" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href={site.footer.redes.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Youtube className="h-5 w-5" />
                 </a>
               </li>
             </ul>
@@ -85,7 +105,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Natan Soares. Todos os direitos reservados.</p>
+          <p>{site.footer.copy}</p>
         </div>
       </div>
     </footer>

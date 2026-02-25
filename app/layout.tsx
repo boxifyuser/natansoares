@@ -1,45 +1,59 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { site } from "@/content/site";
 
-const inter = Inter({ subsets: ["latin"] });
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
-    default: "Natan Soares | Professor de Tecnologia | IA na Prática",
-    template: "%s | Natan Soares",
+    default: `${site.name} | CRM, Tecnologia e IA`,
+    template: `%s | ${site.name}`,
   },
-  description: "Professor de tecnologia com foco em Inteligência Artificial. Aulas, mentorias e consultorias em IA, Redes, Desenvolvimento Web e Programação.",
-  keywords: ["inteligência artificial", "IA", "tecnologia", "professor", "mentoria", "aulas", "programação", "redes", "desenvolvimento web"],
-  authors: [{ name: "Natan Soares" }],
-  creator: "Natan Soares",
-  publisher: "Natan Soares",
-  metadataBase: new URL("https://www.natansoares.com.br"),
-  alternates: {
-    canonical: "/",
-  },
+  description:
+    "15 anos de experiência em CRM e tecnologia. Especialista em IA aplicada a vendas, marketing e operação. Comunidade gratuita e mentoria.",
+  keywords: [
+    "CRM",
+    "IA",
+    "inteligência artificial",
+    "automação",
+    "vendas",
+    "marketing",
+    "mentoria",
+    "Natan Soares",
+  ],
+  authors: [{ name: site.name }],
+  creator: site.name,
+  publisher: site.name,
+  metadataBase: new URL(site.domain),
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://www.natansoares.com.br",
-    siteName: "Natan Soares",
-    title: "Natan Soares | Professor de Tecnologia | IA na Prática",
-    description: "Professor de tecnologia com foco em Inteligência Artificial. Aulas, mentorias e consultorias em IA, Redes, Desenvolvimento Web e Programação.",
+    url: site.domain,
+    siteName: site.name,
+    title: `${site.name} | CRM, Tecnologia e IA`,
+    description:
+      "15 anos de experiência em CRM e tecnologia. IA aplicada a vendas, marketing e operação. Comunidade gratuita e mentoria.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Natan Soares - Professor de Tecnologia",
+        alt: site.name,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Natan Soares | Professor de Tecnologia | IA na Prática",
-    description: "Professor de tecnologia com foco em Inteligência Artificial. Aulas, mentorias e consultorias.",
+    title: `${site.name} | CRM, Tecnologia e IA`,
+    description: "CRM, Tecnologia e IA. Comunidade gratuita e mentoria.",
     images: ["/og-image.jpg"],
   },
   robots: {
@@ -57,12 +71,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt-BR">
-      <body className={inter.className}>
+    <html lang="pt-BR" className={plusJakarta.variable}>
+      <body className="min-h-screen font-sans antialiased bg-background text-foreground">
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
