@@ -11,13 +11,13 @@ const nextConfig = {
   pageExtensions: ['ts', 'tsx', 'js', 'jsx'],
   // Garantir que apenas arquivos do diretório atual sejam processados
   webpack: (config, { isServer }) => {
-    // Ignorar arquivos fora do diretório do projeto
+    // Não ignorar a pasta do projeto: evite '**/Documents/**' se o projeto
+    // estiver em .../Documents/natansoares (causa __webpack_modules__[moduleId] is not a function).
     config.watchOptions = {
       ...config.watchOptions,
       ignored: [
         '**/node_modules/**',
         '**/.next/**',
-        '**/Documents/**',
         '**/Unique/**',
         '**/lp/**',
       ],
