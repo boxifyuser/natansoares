@@ -3,7 +3,8 @@ const path = require('path')
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  outputFileTracingRoot: path.join(__dirname),
+  // Só define em ambiente local; na Vercel o default evita 404 NOT_FOUND
+  ...(process.env.VERCEL ? {} : { outputFileTracingRoot: path.join(__dirname) }),
   images: {
     domains: ['images.unsplash.com'],
   },
